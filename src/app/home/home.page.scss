@@ -1,27 +1,54 @@
-#container {
+.heading{
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 20px;
+  margin-top: 70px;
+  margin-bottom: -60px;
+  color: blue;
+}
+.para{
+  font-size: 22px;
+  font-weight: 500;
+  padding-left: 20px;
+  margin-bottom: 70px;
+  color: #A6ABB1;
+}
+.input-item{
+  padding-left: 20px;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid #eccccc;
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+ &:focus-within {
+  border: 4px solid #ab0000;
+}
+  ion-input{
+      margin-top: -12px;
+  }
+}
+.ion-item{
+  margin-top: 20px;
+}
+.login-button{
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  --border-radius: 12px;
+  margin-top: 60px;
+  --box-shadow: none;
+}
+
+ion-footer {
+  display: block;
+  -ms-flex-order: 1;
+  order: 1;
+  width: 100%;
+  z-index: 10;
+}
+.copyright{
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+}    
+.custom-background{
+  --background: #f0f0f0;
 }
