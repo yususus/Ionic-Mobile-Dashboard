@@ -1,0 +1,7 @@
+{
+  "name": "KumportMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
