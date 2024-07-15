@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center; width: 100%;"  class="header">Menüler</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()">
+        <ion-icon name="moon" slot="icon-only" class="darkModeToggle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button class="login-button2" (click)="lg()" fill="solid" expand="full" size="large" style="width: 80%; margin-top: 150px; margin-left: 50px;">KAPI SEÇ</ion-button>
+  <ion-button class="login-button2" (click)="lg2()" fill="solid" expand="full" size="large" style="width: 80%; margin-top:60px;margin-left: 50px;">KAPI GİRİŞ EKRANI</ion-button>
+  <ion-button class="login-button2" (click)="lg3()" fill="solid" expand="full" size="large" style="width: 80%; margin-top:60px;margin-left: 50px;">KLP DEPO</ion-button>
+</ion-content>

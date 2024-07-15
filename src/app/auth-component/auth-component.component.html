@@ -1,0 +1,32 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()">
+        <ion-icon name="moon" slot="icon-only" class="darkModeToggle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="container"  *ngIf="screen == 'signin'">
+    <h1 class="heading">🛳️ KUMPORT<br><br></h1>
+    <p class="para">Giriş Yap</p>
+    <form [formGroup]="formData">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend class="login-inputt">Email</legend> 
+          <ion-input formControlName="email" label="" type="email" placeholder="name@domain.com" class="inputlabel"></ion-input>    
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend class="login-inputt">Şifre</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******" class="inputlabel"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-button class="login-button" (click)="login()" expand="block">Giriş</ion-button>
+    </form>
+  </div>
+</ion-content>

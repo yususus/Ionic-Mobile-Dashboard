@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back" class="darkModeToggle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()">
+        <ion-icon name="moon" slot="icon-only" class="darkModeToggle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center; width: 100%;" class="header">Kapı Giriş EKranı</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="Ana" style="padding: 20px;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%;">
+        <fieldset class="input-item">
+          <legend class="login-inputt">Plaka</legend>
+          <ion-input placeholder="Plakayı Giriniz" type="text" [(ngModel)]="plaka"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%;">
+        <fieldset class="input-item">
+          <legend class="login-inputt">Dorse Plaka</legend>
+          <ion-input placeholder="Dorse Plakasını Giriniz" type="text" [(ngModel)]="dorsePlaka"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%;">
+        <fieldset class="input-item">
+          <legend class="login-inputt">Konteyner No</legend>
+          <ion-input placeholder="Konteyner No Giriniz" type="text" maxlength="11" [(ngModel)]="konteynerNo"></ion-input>
+        </fieldset>
+      </ion-item>
+      <div class="BUTON" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <ion-button class="login-button2" (click)="tip()" fill="solid" size="large" style="margin: 10px;">TIP</ion-button>
+        <ion-button class="login-button2" (click)="tur()" fill="solid" size="large" style="margin: 10px;">TÜR</ion-button>
+        <ion-button class="login-button2" (click)="imo()" fill="solid" size="large" style="margin: 10px;">IMO</ion-button>
+      </div>
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%; display: flex; flex-wrap: wrap;">
+        <div class="yanyana" style="flex: 1; margin: 10px;">
+          <fieldset class="input-item">
+            <legend class="login-inputt">İso Kod</legend>
+            <ion-input placeholder="İso Kod Giriniz" type="text" maxlength="4" [(ngModel)]="isoKod"></ion-input>
+          </fieldset>
+        </div>
+        <div class="yanyana" style="flex: 1; margin: 10px;">
+          <fieldset class="input-item">
+            <legend class="login-inputt">Payl.</legend>
+            <ion-input placeholder="Payl. Giriniz" type="text" [(ngModel)]="payl"></ion-input>
+          </fieldset>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%; display: flex; flex-wrap: wrap;">
+        <div class="yanyana" style="flex: 1; margin: 10px;">
+          <fieldset class="input-item">
+            <legend class="login-inputt">Seal</legend>
+            <ion-input placeholder="Seal Giriniz" type="text" [(ngModel)]="seal"></ion-input>
+          </fieldset>
+        </div>
+        <div class="yanyana" style="flex: 1;margin: 10px;">
+          <fieldset class="input-item">
+            <legend class="login-inputt">Dara</legend>
+            <ion-input placeholder="Dara Giriniz" type="number" inputmode="numeric" [(ngModel)]="dara"></ion-input>
+          </fieldset>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="ion-item" style="max-width: 500px; width: 100%;">
+        <fieldset class="input-item">
+          <legend class="login-inputt">Gümrük Mühürü</legend>
+          <ion-input placeholder="Gümrük Mühürü Giriniz" type="text" [(ngModel)]="gumrukMuhuru" class="inputlabel"></ion-input>
+        </fieldset>
+      </ion-item>
+    </div>
+
+    <div class="RadioBut" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+      <ion-item lines="none" style="display: flex; flex-direction: row; align-items: center; max-width: 500px; width: 100%;">
+        <ion-radio-group style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;" [(ngModel)]="hasarDurumu">
+          <ion-item style="flex: 1; text-align: center;">
+            <ion-label style="width: fit-content; font-size: 16px; white-space: normal;" class="text-color">Hasarsız</ion-label>
+            <ion-radio slot="start" value="hasarsız"></ion-radio>
+          </ion-item>
+          <ion-item style="flex: 1; text-align: center;">
+            <ion-label style="width: fit-content; font-size: 16px;" class="text-color">Hasarlı</ion-label>
+            <ion-radio slot="start" value="hasarlı"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+    </div>
+
+    
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tabs>
+    <ion-button class="login-button2" (click)="kaydet()" fill="solid" expand="full" size="large">KAYDET</ion-button>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="goToGate2()">
+        <ion-icon name="home"></ion-icon>
+        KLP
+      </ion-tab-button>
+      <ion-tab-button (click)="menuler()">
+        <ion-icon name="radio"></ion-icon>
+        Menüler
+      </ion-tab-button>
+      <ion-tab-button tab="library">
+        <ion-icon name="library"></ion-icon>
+        buton2
+      </ion-tab-button>
+      <ion-tab-button (click)="settings()">
+        <ion-icon name="settings"></ion-icon>
+        Ayarlar
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+</ion-footer>

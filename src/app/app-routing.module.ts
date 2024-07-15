@@ -1,22 +1,46 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthComponentComponent } from './auth-component/auth-component.component';
+import { GatePage } from './gate/gate.page';
+import { Gate1Page } from './gate1/gate1.page';
+import { SettingsPage} from './settings/settings.page';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./auth-component/auth-component.component').then(m => m.AuthComponentComponent)
   },
+  
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: AuthComponentComponent
   },
+  {
+    path: 'gate',
+    component: GatePage
+  },
+  {
+    path: 'gate1',
+    component: Gate1Page
+  },
+  {
+    path: 'gate2',
+    loadChildren: () => import('./gate2/gate2.module').then( m => m.Gate2PageModule)
+  },
+  {
+    path: 'menuler',
+    loadChildren: () => import('./menuler/menuler.module').then( m => m.MenulerPageModule)
+  },
+  
+  { 
+    path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsPageModule) 
+  },
+  
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
