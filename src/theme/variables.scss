@@ -62,7 +62,7 @@
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #92949c;
+  --ion-color-medium: #3c3d3f;
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
@@ -89,9 +89,10 @@
 
   body.dark {
   --ion-background-color:#000000;
-  --ion-text-color:#000000;
+  --ion-text-color:#ffffff;
   .input-item{
     border: 2px solid #eccccc;
+    background-color: #222428;
     
    &:focus-within {
     border: 4px solid #ab0000;
@@ -116,7 +117,7 @@
     color: white;
   }
   .radiobtn{
-    background-color: white;
+    --color-checked: white;
   }
 
 

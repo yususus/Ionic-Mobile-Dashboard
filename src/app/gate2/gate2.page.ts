@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-gate2',
   templateUrl: './gate2.page.html',
@@ -18,7 +18,7 @@ export class Gate2Page implements OnInit {
   // gumrukMuhuru: string = '';
   // hasarDurumu: string = 'hasarsız'; // Default hasar durumu
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private navCtrl: NavController) { }
 
   ngOnInit() {
     // Ensure form is cleared when component initializes
@@ -38,30 +38,19 @@ export class Gate2Page implements OnInit {
     // this.hasarDurumu = 'hasarsız'; // Set to default value
   }
 
-  login() {
-    // Perform login actions
-    // Navigate to '/gate1' or any other page after successful login
-    this.router.navigateByUrl('/gate1');
-  }
-
+ 
   back() {
-    // Clear form data when navigating back
-   //  this.clearForm();
-    // Navigate back to '/gate' or any other previous page
-    this.router.navigateByUrl('/gate1');
+    this.navCtrl.back();
+  }
+  selectGate(){
+    this.navCtrl.navigateForward('/gate')
   }
   goToGate2() {
-    this.router.navigateByUrl('/gate2');
+    this.navCtrl.navigateForward('/gate2');
   }
-  navigateToSettings() {
-    this.router.navigateByUrl('/settings');
-  // Optional: Add functions for other buttons (tip(), tur(), imo(), kaydet(), etc.)
+  exit() {
+    this.router.navigateByUrl('');
   }
-
-  menuler() {
-    this.router.navigateByUrl('/menuler');
-  }
-
   toggleDarkMode() {
     document.body.classList.toggle('dark');
   }

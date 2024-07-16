@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-auth-component',
@@ -13,7 +14,7 @@ export class AuthComponentComponent implements OnInit {
   screen: any = 'signin';
   formData: FormGroup;
   isLoading: boolean = false;
-  constructor(private fb:FormBuilder, private auth:AuthService, private router: Router) {
+  constructor(private fb:FormBuilder, private auth:AuthService, private router: Router, private navCtrl: NavController) {
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
       email: ['',[Validators.required, Validators.email]],
@@ -40,8 +41,7 @@ export class AuthComponentComponent implements OnInit {
     }  
   }*/
     login() {
-      // Login işleminiz başarılı olduğunda yönlendirme yapabilirsiniz
-      this.router.navigateByUrl('/gate'); // '/dashboard' yerine istediğiniz sayfa yolunu verin
+      this.navCtrl.navigateForward('/gate');
     }
 
     toggleDarkMode() {

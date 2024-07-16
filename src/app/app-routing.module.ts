@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthComponentComponent } from './auth-component/auth-component.component';
 import { GatePage } from './gate/gate.page';
 import { Gate1Page } from './gate1/gate1.page';
-import { SettingsPage} from './settings/settings.page';
+
 
 const routes: Routes = [
   {
@@ -27,15 +27,7 @@ const routes: Routes = [
     path: 'gate2',
     loadChildren: () => import('./gate2/gate2.module').then( m => m.Gate2PageModule)
   },
-  {
-    path: 'menuler',
-    loadChildren: () => import('./menuler/menuler.module').then( m => m.MenulerPageModule)
-  },
-  
-  { 
-    path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsPageModule) 
-  },
-  
+ 
 ];
 @NgModule({
   imports: [

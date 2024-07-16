@@ -78,28 +78,31 @@
         </ion-radio-group>
       </ion-item>
     </div>
-    
-
     <ion-tabs>
-      <ion-button class="login-button2" (click)="kaydet()" fill="solid" expand="full" size="large">KAYDET</ion-button>
+      <ion-button class="save" (click)="kaydet()" fill="solid" expand="full" size="large">KAYDET</ion-button>
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="home">
           <ion-icon name="home"></ion-icon>
           KLP
         </ion-tab-button>
-        <ion-tab-button (click)="menuler()">
+        <ion-tab-button (click)="selectGate()">
           <ion-icon name="radio"></ion-icon>
-          Menüler
+          Kapı Seç
         </ion-tab-button>
-        <ion-tab-button tab="library">
+        <ion-tab-button  (click)="back()">
           <ion-icon name="library"></ion-icon>
-          buton2
+          Kapı Giriş Ekranı
         </ion-tab-button>
-        <ion-tab-button tab="settings">
-          <ion-icon name="settings"></ion-icon>
-          Ayarlar
+        <ion-tab-button tab="exit" (click)="exit()">
+          <ion-icon name="exit"></ion-icon>
+          Çıkış yap
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
   </div>
 </ion-content>
+
+
+<ion-footer>
+  
+</ion-footer>

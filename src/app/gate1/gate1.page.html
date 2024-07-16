@@ -81,11 +81,11 @@
         <ion-radio-group style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;" [(ngModel)]="hasarDurumu">
           <ion-item style="flex: 1; text-align: center;">
             <ion-label style="width: fit-content; font-size: 16px; white-space: normal;" class="text-color">Hasarsız</ion-label>
-            <ion-radio slot="start" value="hasarsız"></ion-radio>
+            <ion-radio slot="start" value="hasarsız" class="radiobtn"></ion-radio>
           </ion-item>
           <ion-item style="flex: 1; text-align: center;">
             <ion-label style="width: fit-content; font-size: 16px;" class="text-color">Hasarlı</ion-label>
-            <ion-radio slot="start" value="hasarlı"></ion-radio>
+            <ion-radio slot="start" value="hasarlı" class="radiobtn"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </ion-item>
@@ -97,24 +97,25 @@
 
 <ion-footer>
   <ion-tabs>
-    <ion-button class="login-button2" (click)="kaydet()" fill="solid" expand="full" size="large">KAYDET</ion-button>
+    <ion-button class="save" (click)="kaydet()" fill="solid" expand="full" size="large">KAYDET</ion-button>
     <ion-tab-bar slot="bottom">
       <ion-tab-button (click)="goToGate2()">
         <ion-icon name="home"></ion-icon>
         KLP
       </ion-tab-button>
-      <ion-tab-button (click)="menuler()">
+      <ion-tab-button (click)="selectGate()">
         <ion-icon name="radio"></ion-icon>
-        Menüler
+        Kapı Seç
       </ion-tab-button>
-      <ion-tab-button tab="library">
-        <ion-icon name="library"></ion-icon>
-        buton2
+      <ion-tab-button tab="gate1" >
+        <ion-icon name="document"></ion-icon>
+        Kapı Giriş ekranı
       </ion-tab-button>
-      <ion-tab-button (click)="settings()">
-        <ion-icon name="settings"></ion-icon>
-        Ayarlar
+      <ion-tab-button tab="exit" (click)="exit()">
+        <ion-icon name="exit"></ion-icon>
+        Çıkış yap
       </ion-tab-button>
+      
     </ion-tab-bar>
   </ion-tabs>
 

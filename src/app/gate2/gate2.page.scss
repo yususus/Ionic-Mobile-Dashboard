@@ -6,15 +6,20 @@ ion-textarea.custom {
   --placeholder-color: #ddd;
   --placeholder-opacity: 0.8;
 }
-
-
+.save{
+  --background: #6080d6;
+}
+.login-button2{
+  --background: #6080d6;
+  color: black;
+}
 .input-item{
   padding-left: 30px;
   width: 100%;
   border-radius: 40px;
   border: 2px solid #eccccc;
   height: 70px;
-  background-color: rgb(190, 190, 190);
+  background-color: rgb(224, 224, 224);
  &:focus-within {
   border: 4px solid #ab0000;
 }

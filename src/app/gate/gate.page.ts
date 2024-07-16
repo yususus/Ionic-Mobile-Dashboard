@@ -3,6 +3,8 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+
 
 
 @Component({
@@ -13,25 +15,22 @@ import { Router } from '@angular/router';
 export class GatePage {
   selectedGate: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private navCtrl: NavController) { }
 
   // Seçim değiştiğinde bu metod çalışır
   onChangeColor() {
     console.log('Selected Gate:', this.selectedGate);
   }
+  onChangeGate() {
+    console.log('Selected Gate:', this.selectedGate);
+  }
+
 
   login() {
-    // Login işleminiz başarılı olduğunda yönlendirme yapabilirsiniz
-    this.router.navigateByUrl('/gate1'); // '/dashboard' yerine istediğiniz sayfa yolunu verin
+    this.navCtrl.navigateForward('/gate1'); 
   }
   back() {
-    const confirmLeave = confirm('Çıkmak istiyor musunuz?'); // Onaylama ile ilgili dialog kutusu
-    if (confirmLeave) {
-      this.router.navigateByUrl(''); // Onaylandığında auth-component sayfasına yönlendirme
-    } else {
-      // İsteğe bağlı: Kullanıcı iptal ederse (çıkmayı seçmezse) ne yapılacağını işleyin
-      // Örneğin, bir mesaj gösterebilir veya başka bir işlem yapabilirsiniz.
-    }
+      this.navCtrl.back(); 
   }
   toggleDarkMode() {
     document.body.classList.toggle('dark');
