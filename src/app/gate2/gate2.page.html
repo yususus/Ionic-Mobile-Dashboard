@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolhead">
     <ion-buttons slot="start">
       <ion-button (click)="back()">
         <ion-icon name="arrow-back" class="darkModeToggle"></ion-icon>
@@ -10,7 +10,7 @@
         <ion-icon name="moon" slot="icon-only" class="darkModeToggle"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title style="text-align: center; width: 100%;"  class="header">Kapı Giriş EKranı</ion-title>
+    <ion-title style="text-align: center; width: 100%;"  class="header">Kapı Giriş Ekranı</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -63,17 +63,17 @@
         </div>
       </ion-item>
     </div>
-
-    <div class="RadioBut" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+<br>
+    <div class="RadioBut" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
       <ion-item lines="none" style="display: flex; flex-direction: row; align-items: center; max-width: 500px; width: 100%;">
-        <ion-radio-group style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;" [(ngModel)]="hasarDurumu">
-          <ion-item style="flex: 1; text-align: center;">
-            <ion-label style="width: fit-content; font-size: 16px; white-space: normal;" class="text-color">Hasarsız</ion-label>
-            <ion-radio slot="start" value="hasarsız"></ion-radio>
+        <ion-radio-group style="display: flex; flex-direction: row; justify-content: space-between; width: 500%;" [(ngModel)]="hasarDurumu">
+          <ion-item style="text-align: center;">
+            <ion-label style="width: fit-content; font-size: 16px; white-space: normal; white-space: nowrap;" >Hasarsız</ion-label>
+            <ion-radio slot="start" value="hasarsız" class="radiobtn"></ion-radio>
           </ion-item>
-          <ion-item style="flex: 1; text-align: center;">
-            <ion-label style="width: fit-content; font-size: 16px;" class="text-color">Hasarlı</ion-label>
-            <ion-radio slot="start" value="hasarlı"></ion-radio>
+          <ion-item style="text-align: center;">
+            <ion-label style="width: fit-content; font-size: 16px; white-space: nowrap;" >Hasarlı</ion-label>
+            <ion-radio slot="start" value="hasarlı" class="radiobtn"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </ion-item>

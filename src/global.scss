@@ -25,3 +25,91 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+
+
+ion-textarea.custom {
+  --color: #fff;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --placeholder-color: #ddd;
+  --placeholder-opacity: 0.8;
+}
+
+.save {
+  --background: #6080d6;
+  --background-activated: #7297ff;
+}
+
+.radiobtn {
+  --color-checked: black;
+}
+
+.darkModeToggle {
+  color: #000;
+}
+
+.login-button2 {
+  --background: #6080d6;
+  --background-activated: #7297ff;
+  color: black;
+}
+
+.input-item {
+  padding-left: 30px;
+  width: 100%;
+  border-radius: 40px;
+  border: 2px solid #eccccc;
+  height: 70px;
+  background-color: rgb(224, 224, 224);
+}
+
+.input-item:focus-within {
+  border: 4px solid #e92222;
+}
+
+.input-item ion-input {
+  margin-top: -12px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 20px;
+  margin-top: 70px;
+  margin-bottom: -60px;
+  color: blue;
+}
+
+.para {
+  font-size: 22px;
+  font-weight: 500;
+  padding-left: 20px;
+  margin-bottom: 70px;
+  color: #a6abb1;
+}
+
+.ion-item {
+  margin-top: 20px;
+}
+
+.login-button{
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  --border-radius: 12px;
+  margin-top: 60px;
+  --box-shadow: none;
+  --background: #5585b5;
+  --background-activated: #7297ff;
+
+}
+
+
+ion-footer {
+  display: block;
+  order: 1;
+  width: 100%;
+  z-index: 10;
+}
+
+  
