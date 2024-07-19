@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavigationService } from '../services/navigation.service';
 @Component({
   selector: 'app-gate2',
   templateUrl: './gate2.page.html',
-  styleUrls: ['./gate2.page.scss'],
+ 
 })
 export class Gate2Page implements OnInit {
 
@@ -18,7 +17,7 @@ export class Gate2Page implements OnInit {
   // gumrukMuhuru: string = '';
   // hasarDurumu: string = 'hasarsız'; // Default hasar durumu
 
-  constructor(private router: Router, private navCtrl: NavController) { }
+  constructor(private navigationService: NavigationService) { }
 
   ngOnInit() {
     // Ensure form is cleared when component initializes
@@ -40,16 +39,16 @@ export class Gate2Page implements OnInit {
 
  
   back() {
-    this.navCtrl.back();
+    this.navigationService.navigateBack();
   }
   selectGate(){
-    this.navCtrl.navigateForward('/gate')
+    this.navigationService.navigateToGate();
   }
   goToGate2() {
-    this.navCtrl.navigateForward('/gate2');
+    this.navigationService.navigateToGate2();
   }
   exit() {
-    this.router.navigateByUrl('');
+    this.navigationService.exitApp();
   }
   toggleDarkMode() {
     document.body.classList.toggle('dark');

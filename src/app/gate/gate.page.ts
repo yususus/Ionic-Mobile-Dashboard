@@ -1,21 +1,16 @@
 // gate.page.ts
-
-
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
-
-
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-gate',
   templateUrl: 'gate.page.html',
-  styleUrls: ['gate.page.scss'],
+ 
 })
 export class GatePage {
   selectedGate: string = '';
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navigationService: NavigationService) { }
 
   // Seçim değiştiğinde bu metod çalışır
   onChangeColor() {
@@ -25,12 +20,12 @@ export class GatePage {
     console.log('Selected Gate:', this.selectedGate);
   }
 
-
   login() {
-    this.navCtrl.navigateForward('/gate1'); 
+    this.navigationService.navigateToGate1();
   }
+
   back() {
-      this.navCtrl.back(); 
+    this.navigationService.navigateBack();
   }
   toggleDarkMode() {
     document.body.classList.toggle('dark');

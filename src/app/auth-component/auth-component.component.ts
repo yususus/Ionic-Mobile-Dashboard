@@ -3,18 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { NavController } from '@ionic/angular';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-auth-component',
   templateUrl: './auth-component.component.html',
-  styleUrls: ['./auth-component.component.scss'],
+  
 })
 export class AuthComponentComponent implements OnInit {
   screen: any = 'signin';
   formData: FormGroup;
   isLoading: boolean = false;
-  constructor(private fb:FormBuilder, private auth:AuthService, private router: Router, private navCtrl: NavController) {
+  constructor(private fb:FormBuilder, private auth:AuthService, private router: Router, private navigationService: NavigationService) {
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
       email: ['',[Validators.required, Validators.email]],
@@ -41,8 +41,9 @@ export class AuthComponentComponent implements OnInit {
     }  
   }*/
     login() {
-      this.navCtrl.navigateForward('/gate');
+      this.navigationService.navigateToGate();
     }
+  
 
     toggleDarkMode() {
       document.body.classList.toggle('dark');
